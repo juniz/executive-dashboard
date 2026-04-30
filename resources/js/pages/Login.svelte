@@ -28,7 +28,11 @@
     }
 </script>
 
-<AppHead title="Login — Executive Dashboard SIMRS" />
+<AppHead 
+    title="Executive Dashboard SIMRS"
+    description="Platform pemantauan indikator kinerja rumah sakit secara real-time dan terintegrasi."
+    ogImage="/images/og-image.png"
+    />
 
 <div class="login-root min-h-screen flex font-sans">
 
