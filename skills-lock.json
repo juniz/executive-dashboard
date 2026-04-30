@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "kpi-dashboard-design": {
+      "source": "secondsky/claude-skills",
+      "sourceType": "github",
+      "computedHash": "2e74718f98cd5d738142eb4f11ee6442a430b7b3d76563602928cd0c54ce4f57"
+    },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "computedHash": "0a413bf988d06481f69bb81df2070741c3ba12dd9f1be2706d57f259c905992d"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --color-primary: #0078D4;
+    --color-primary-deep: #004578;
+    --color-primary-light: #E1F0FB;
+    --color-accent: #005A9E;
+    --color-background: #F3F4F6;
+    --color-surface: #FFFFFF;
+    --color-border: #E5E7EB;
+    
+    --font-sans: Figtree, ui-sans-serif, system-ui, sans-serif;
+    --font-mono: Noto Sans, monospace;
+
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+}
+
+@layer utilities {
+    .card-solid {
+        @apply bg-white border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-300;
+    }
+    .header-pill {
+        @apply bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider;
+    }
+    .text-title {
+        @apply text-slate-900 font-extrabold tracking-tight;
+    }
+}
+
+body {
+    @apply bg-slate-50 text-slate-900 antialiased font-sans selection:bg-primary/10;
+    font-size: 1.05rem; /* Slightly larger for comfort */
+}
+
+
