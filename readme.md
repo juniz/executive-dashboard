@@ -137,6 +137,34 @@ Agar fitur otomatis berjalan, tambahkan Cron Job di aaPanel:
     php /www/wwwroot/nama-domain-anda/artisan schedule:run >> /dev/null 2>&1
     ```
 
+### 9. Menjalankan SSR (Server-Side Rendering)
+
+Untuk mengaktifkan SSR pada aaPanel, ikuti langkah-langkah berikut:
+
+1.  **Build SSR Bundle**:
+    Jalankan perintah ini di terminal:
+    ```bash
+    npm run build:ssr
+    ```
+    Ini akan menghasilkan file di folder `bootstrap/ssr`.
+
+2.  **Instal Supervisor**:
+    *   Buka **App Store** di aaPanel.
+    *   Cari dan instal **Supervisor Manager**.
+
+3.  **Konfigurasi Supervisor**:
+    *   Buka **Supervisor Manager** > **Add Daemon**.
+    *   **Name**: `laravel-ssr`
+    *   **Run User**: `www`
+    *   **Run Dir**: `/www/wwwroot/nama-domain-anda`
+    *   **Start Command**: `php artisan inertia:start-ssr`
+    *   **Processes**: 1
+    *   Klik **Confirm**.
+
+4.  **Cek Status**:
+    Pastikan statusnya **Running**. Jika ada perubahan kode frontend, Anda harus menjalankan `npm run build:ssr` lagi dan merestart daemon di Supervisor.
+
+
 ### Optimasi Performa
 Jalankan perintah ini setelah setiap update kode:
 ```bash
