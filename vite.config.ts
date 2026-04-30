@@ -9,10 +9,13 @@ export default defineConfig({
     plugins: [
         laravel({
             input: ['resources/css/app.css', 'resources/js/app.ts'],
-            ssr: 'resources/js/ssr.ts',
             refresh: true,
         }),
-        inertia(),
+        inertia({
+            ssr: {
+                entry: 'resources/js/ssr.ts',
+            },
+        }),
         tailwindcss(),
         svelte(),
         wayfinder({

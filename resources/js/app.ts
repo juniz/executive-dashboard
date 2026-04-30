@@ -1,6 +1,5 @@
 import { createInertiaApp } from '@inertiajs/svelte';
 import { hydrate, mount } from 'svelte';
-import { render } from 'svelte/server';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -11,9 +10,6 @@ createInertiaApp({
         return pages[`./pages/${name}.svelte`];
     },
     setup({ el, App, props }) {
-        if (import.meta.env.SSR) {
-            return render(App, { props });
-        }
         hydrate(App, { target: el, props });
     },
 
